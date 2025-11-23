@@ -1,0 +1,156 @@
+# Next.js Landing Page Implementation Plan
+
+Project Goal: Create a high-performing, SEO-friendly static landing page for "Technical Electric Services" to attract clients via Google search and facilitate contact through WhatsApp or Instagram.
+
+Technology Stack:
+
+-    Framework: Next.js (for static site generation next export)
+-    UI Library: React
+-    Styling: Choose one: Tailwind CSS (recommended for utility-first approach and speed), CSS Modules, or Styled Components.
+-    Deployment: Vercel (seamless integration with Next.js) or Netlify.
+
+## Phase 1: Setup & Core Structure (1-2 Days)
+
+### Next.js Project Initialization:
+
+    npx create-next-app@latest your-company-name --use-pnpm --example "https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss" (if using Tailwind, otherwise remove --example)
+    Clean up boilerplate files (styles, api, etc.) to keep it lean for a static site.
+
+### Basic Page Structure (pages/index.js):
+
+    Create a single index.js file for your landing page.
+
+### Component Architecture:
+
+    Establish a components directory for reusable UI elements (e.g., Header, Footer, HeroSection, ServicesSection, ContactSection).
+
+    Styling Setup:
+
+    Configure your chosen styling solution (e.g., install Tailwind CSS and run npx tailwindcss init -p).
+
+    Favicon & Basic Assets:
+
+    Add your company logo as a favicon and any initial brand assets to the public directory.
+
+## Phase 2: Content & UI Development (3-5 Days)
+
+### Hero Section:
+
+    Headline: Clear, concise, and keyword-rich (e.g., "Reliable Electrical Services & Solar Panel Installation in Pimenta - MG").
+    Sub-headline: Briefly explain what you do (owner + helpers, residential, solar power plants).
+    Strong Call-to-Action (CTA): "Get a Free Quote," "Contact Us Today."
+    Contact Buttons: Prominently feature buttons for WhatsApp and Instagram.
+        WhatsApp: https://wa.me/37999451323?text=Olá,%20gostaria%20de%20um%20orçamento.
+        Instagram: https://www.instagram.com/jurandir.alves
+    High-Quality Image/Video: Showcase your work (solar panels, electrical work) or a team photo.
+
+### Services Section:
+
+    Detail your main services: general electrical services, solar panel installation, solar power plant solutions.
+    Use bullet points or short paragraphs with icons for easy readability.
+    Highlight benefits (safety, efficiency, cost savings).
+
+### About Us Section:
+
+    Introduce "Technical Electric" – owner-operated, experienced, dedicated.
+    Mention "helpers" to give a sense of team and capacity.
+    Briefly state your mission or values (e.g., quality, reliability, customer satisfaction).
+
+### Why Choose Us / Differentiators:
+
+    Highlight unique selling points (e.g., "experienced owner," "local service," "guaranteed work").
+
+### Call to Action (Repeat):
+
+    Place another CTA with WhatsApp/Instagram buttons towards the bottom of the page.
+
+### Footer:
+
+    Company Name, Copyright, Privacy Policy (if applicable), essential contact links (repeat WhatsApp/Instagram).
+
+## Phase 3: SEO & Performance Optimization (2-3 Days)
+
+This is crucial for Google searchability!
+
+    Metadata (in pages/_document.js or next/head):
+
+    <title> Tag: Unique, keyword-rich (e.g., "Technical Electric Services | Solar Panel Installation | [Your City]").
+    <meta name="description">: Compelling summary with keywords (e.g., "Expert electrical services and solar panel installation by Technical Electric. Owner-operated, reliable, and serving [Your City]. Get a free quote today!").
+    <meta name="keywords"> (less impactful now, but can be included): comma-separated relevant terms.
+    Open Graph (og:) Tags: For social media sharing (title, description, image, URL).
+
+    Structured Data (Schema.org):
+
+    Implement JSON-LD schema for your business type (e.g., LocalBusiness, Electrician, SolarEnergyInstaller). This helps Google understand your business. Use next/script for this.
+    Include business name, address, phone, services, opening hours, reviews (if any).
+
+    Keyword Research & Integration:
+
+    Identify primary keywords (e.g., "electrician [city]", "solar panel installation [city]", "electrical repairs [city]").
+    Naturally integrate these keywords into your headlines, sub-headlines, and body content.
+
+    Image Optimization:
+
+    Use next/image component for automatic image optimization (lazy loading, responsive images, WebP format).
+    Add descriptive alt text to all images for accessibility and SEO.
+
+    Page Speed & Performance:
+
+    Next.js already provides excellent performance out of the box (pre-rendering, code splitting).
+    Minimize CSS and JavaScript.
+    Ensure all images are optimized.
+    Regularly test with Google PageSpeed Insights and Lighthouse.
+
+    Internal Linking:
+
+    While it's a single page, ensure CTAs are clear and point to your contact methods.
+
+    Sitemap (sitemap.xml) & Robots (robots.txt):
+
+    For a single-page site, a sitemap.xml is simple but good practice. Generate one (e.g., using a small script or manually) and place it in the public directory.
+    Create a robots.txt file in the public directory to guide search engine crawlers (usually Allow: /).
+
+    Responsive Design:
+
+    Ensure the page looks great and functions perfectly on all devices (mobile, tablet, desktop). Use media queries or a responsive framework like Tailwind CSS.
+
+## Phase 4: Deployment & Monitoring (1 Day)
+
+### Build Static Files:
+
+    next build then next export to generate the out directory containing your static HTML, CSS, and JS files.
+
+    Deployment:
+
+    Vercel: Connect your GitHub repository. Vercel automatically detects Next.js and deploys your static site.
+    Netlify: Similar to Vercel, connect your repo, set build command to next build && next export, and publish directory to out.
+    Configure a custom domain.
+
+    Google Search Console:
+
+    Verify your site ownership.
+    Submit your sitemap.xml.
+    Monitor indexing status, crawl errors, and search performance.
+
+    Google Analytics (Optional):
+
+    Integrate Google Analytics to track page views, user engagement, and traffic sources.
+
+### Key Success Factors for Client Search & Contact:
+
+    Prominent CTAs: Make the WhatsApp and Instagram buttons visually stand out and easy to find.
+    Clear Value Proposition: Immediately convey what you do and why you're the best choice.
+    Local SEO: Incorporate your service area (city, region) throughout the content and in metadata.
+    Fast Loading Speed: A quick site keeps users engaged and is favored by Google.
+    Mobile-First Design: A significant portion of searches happen on mobile devices.
+    Direct Contact Links: Ensure the WhatsApp and Instagram links are correctly formatted and lead directly to interaction.
+
+By following this plan, you'll create a robust, performant, and search-engine-friendly landing page that effectively drives clients to contact your business.
+
+# Rules
+- All content of page is in brazilian portuguese (pt-br), but the code of page is in english (en);
+- The city of the page is Pimenta (MG);
+- The name of the company is Jurandir Alves Eletricista;
+- The company is owner-operated;
+- The company is 25 years old;
+- The company work with electrical services, but the main focus is solar power plant solutions;

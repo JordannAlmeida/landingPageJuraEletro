@@ -22,11 +22,11 @@ export default function Header() {
                     <img
                         src={scrolled ? "/assets/images/logo-black-wbg.png" : "/assets/images/logo-white-wbg.png"}
                         alt="Jurandir Alves Eletricista Logo"
-                        className="h-25 w-auto object-contain ml-[-70px]"
+                        className="h-16 md:h-28 w-auto object-contain -ml-4 md:-ml-16"
                     />
-                    <div className="flex flex-col -ml-16 mb-6">
-                        <span className={`text-xl font-bold leading-tight ${scrolled ? 'text-slate-800' : 'text-white'}`}>Jurandir Alves</span>
-                        <span className={`text-sm font-medium ${scrolled ? 'text-green-600' : 'text-yellow-400'}`}>Eletricista</span>
+                    <div className="flex flex-col -ml-6 md:-ml-12 mb-2 md:mb-6">
+                        <span className={`text-sm md:text-xl font-bold leading-tight ${scrolled ? 'text-slate-800' : 'text-white'}`}>Jurandir Alves</span>
+                        <span className={`text-xs md:text-sm font-medium ${scrolled ? 'text-green-600' : 'text-yellow-400'}`}>Eletricista</span>
                     </div>
                 </Link>
 
@@ -35,7 +35,7 @@ export default function Header() {
                     {['Início', 'Serviços', 'Sobre'].map((item) => (
                         <Link
                             key={item}
-                            href={`#${item === 'Início' ? 'hero' : item.toLowerCase().replace('ç', 'c').replace('õ', 'o')}`}
+                            href={`#${item === 'Início' ? 'hero' : item === 'Serviços' ? 'services' : 'about'}`}
                             className={`font-medium transition hover:text-yellow-500 ${scrolled ? 'text-slate-600' : 'text-slate-200'
                                 }`}
                         >
@@ -81,7 +81,7 @@ export default function Header() {
                             {['Início', 'Serviços', 'Sobre'].map((item) => (
                                 <Link
                                     key={item}
-                                    href={`#${item === 'Início' ? 'hero' : item.toLowerCase().replace('ç', 'c').replace('õ', 'o')}`}
+                                    href={`#${item === 'Início' ? 'hero' : item === 'Serviços' ? 'services' : 'about'}`}
                                     className="text-slate-600 hover:text-green-600 font-medium text-lg"
                                     onClick={() => setIsMenuOpen(false)}
                                 >
